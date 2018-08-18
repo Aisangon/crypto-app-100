@@ -7,15 +7,15 @@ import { BitcoinMarket } from '../models/bitcoin-market.class';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public BitcoinMarketCap: BitcoinMarket = new BitcoinMarket();
+  public bitcoinMarketCap: BitcoinMarket = new BitcoinMarket();
+
   constructor(public cryptoService: CryptoService) {
     this.getBitcoinStats();
   }
 
   public getBitcoinStats(): void {
     this.cryptoService.getBitcoinmarketCap().subscribe((data: any) => {
-      this.BitcoinMarketCap = new BitcoinMarket(data);
-      console.log(this.BitcoinMarketCap);
+      this.bitcoinMarketCap = new BitcoinMarket(data);
     });
   }
 }
