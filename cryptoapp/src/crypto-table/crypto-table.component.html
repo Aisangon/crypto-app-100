@@ -19,10 +19,10 @@
         <tr *ngFor="let crypto of filteredCryptos;" class="borderWhiteAll" [class.positive]="crypto.percent_change_24h >= 0" [class.negative]="crypto.percent_change_24h < 0">
             <td class="borderWhiteAll" [innerHTML]="crypto.rank"></td>
             <td class="borderWhiteAll" [innerHTML]="crypto.name"></td>
-            <td class="borderWhiteAll" [innerHTML]="crypto.market_cap_usd | currency"></td>
+            <td class="borderWhiteAll" [innerHTML]="crypto.market_cap_usd | currency: 'USD': true: '1.0-0'"></td>
             <td class="borderWhiteAll" *ngIf="priceUnit === 'USD'" [innerHTML]="crypto.price_usd  | currency"></td>
             <td class="borderWhiteAll" *ngIf="priceUnit === 'BTC'" [innerHTML]="crypto.price_btc"></td>
-            <td class="borderWhiteAll" [innerHTML]="crypto.available_supply"></td>
+            <td class="borderWhiteAll" [innerHTML]="crypto.available_supply | number"></td>
             <td class="borderWhiteAll" [innerHTML]="crypto.percent_change_24h * .01 | percent: '1.1-2'"></td>
         </tr>
     </tbody>

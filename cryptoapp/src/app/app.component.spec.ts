@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CryptoService } from '../services/crypto.service';
-import { BitcoinMarket } from '../models/bitcoin-market.class';
+import { BitcoinMarket } from '../models';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,7 +13,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [ CryptoService ],
-      imports: [ HttpClientModule ],
+      imports: [HttpClientModule],
       schemas: [ NO_ERRORS_SCHEMA ]
     }).compileComponents();
   }));
@@ -25,7 +25,6 @@ describe('AppComponent', () => {
 
     // assert
     expect(app).toBeTruthy();
-
   }));
 
   it('instance of BitcoinMarket', async(() => {

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CryptoCurrency } from '../models/crypto-currency.class';
+import { CryptoCurrency } from '../models';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -11,7 +11,7 @@ export class CryptoFilterComponent {
     @Input() public cryptos: CryptoCurrency[];
     @Output() public filterCryptosEvent = new EventEmitter<CryptoCurrency[]>();
     @Output() public priceUnitEvent = new EventEmitter<string>();
-    public filteredCryptos: CryptoCurrency[];
+    public filteredCryptos: CryptoCurrency[] = [];
     // tslint:disable-next-line:no-inferrable-types
     public percentChange: string = 'All';
     // tslint:disable-next-line:no-inferrable-types

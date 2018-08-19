@@ -1,4 +1,4 @@
-import { PriceCoordinates } from './price-coordinates.interface';
+import { PriceCoordinates } from '.';
 
 export class BitcoinPrice {
     public status: string;
